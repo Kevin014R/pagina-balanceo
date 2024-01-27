@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <title>Balanceo de Líneas</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+
+    <div class="progress-container">
+    <div class="progress-bar" id="eficienciaProgressBar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</div>
+
+    <div id="Amarillo"></div>
+    <div id="Naranja"></div>
+    <div id="Verde"></div>
+
+    <table id="rango" border="1">
+        <tr>
+            <td>Informacion</td>
+            <td>Rango</td>
+            <td>Color</td>
+        </tr>
+        <tr>
+            <td>Linea funcionando bien.</td>
+            <td>85%</td>
+            <td>Amarillo</td>
+        </tr>
+        <tr>
+            <td>Linea funcionando muy bien.</td>
+            <td>85%-95%</td>
+            <td>Naranja</td>
+        </tr>
+        <tr>
+            <td>Linea funcionando correctamente.</td>
+            <td>95%-100%</td>
+            <td>Verde</td>
+        </tr>
+    </table>
+
+ <div class="container">
+    <header>
+        <h1>Balanceo de Líneas - Método por Operadores</h1> 
+    </header>
+
+   <div id="introduccion">
+    <section>
+        <h2>Introducción</h2>
+        <p>Este metodo se utiliza para determinar el numero necesario de operadores en relacion o funcion al tiempo de operación.</p>
+    </section>
+   </div>
+
+    <form id="balanceoForm">
+        <h2>Tick Time (TKT) Calculation</h2>
+        <label for="jornadaTrabajo">Tiempo de Jornada de Trabajo (minutos):</label>
+        <input type="number" id="jornadaTrabajo" required>
+        <label for="numeroPiezas">Número de Piezas:</label>
+        <input type="number" id="numeroPiezas" required>
+        <button type="button" onclick="calcularTKT()">Calcular TKT</button>
+
+        <div class="tkt-result" id="tktResult"></div>
+
+        <hr>
+
+        <label for="numeroActividades">Número de Actividades:</label>
+        <input type="number" id="numeroActividades" oninput="agregarFilas()" required>
+        
+        <table id="actividadesTable">
+            <tr>
+                <th>Actividad</th>
+                <th>Tiempo Estándar (TS)</th>
+                <th>TS/TKT</th>
+                <th>OP (Operadores)</th>
+                <th>Op. Ml (Operadores Mínimos)</th>
+            </tr>
+        </table>
+
+        <button id="balanceo" type="button" onclick="calcularBalanceo(),mostrarDatoMasGrande()">Calcular Balanceo</button>
+        <div id="datoMasGrandeResult"></div>
+        <div id="PiezasMostrar"></div>
+        <div id="Eficiencia"></div>
+
+    </form>
+
+    <div id="resultadoBalanceo"></div>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
